@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<venda>
-    <formaDePagamento>Cartao</formaDePagamento>
+<venda moeda="real">
+    <formaDePagamento>Débito</formaDePagamento>
     <produtos>
         <produto>
             <nome>Livro de java com xml</nome>
