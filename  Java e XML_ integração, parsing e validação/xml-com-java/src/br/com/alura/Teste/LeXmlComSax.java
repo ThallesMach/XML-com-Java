@@ -8,18 +8,20 @@ import org.xml.sax.InputSource;
 import org.xml.sax.XMLReader;
 import org.xml.sax.helpers.XMLReaderFactory;
 
-public class LeArquivoXmlDeOutraForma {
+import br.com.alura.Handlers.ProdutosHandler;
+
+public class LeXmlComSax { // LeArquivoXmlDeOutraForma
 	
 	public static void main(String[] args) throws Exception {
 		
 		XMLReader leitor = XMLReaderFactory.createXMLReader();
-		LeitorXml logica = new LeitorXml();
+		ProdutosHandler logica = new ProdutosHandler();
 		leitor.setContentHandler((ContentHandler) logica);
 		InputStream ips = new FileInputStream("src/vendas.xml") ;
 		InputSource is = new InputSource(ips) ;
 		leitor.parse(is);
 		
-		System.out.println(logica.produtos );
+		System.out.println(logica.getProdutos() );
 	}
 
 }

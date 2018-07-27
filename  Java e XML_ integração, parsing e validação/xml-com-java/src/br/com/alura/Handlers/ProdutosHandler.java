@@ -1,4 +1,4 @@
-package br.com.alura.Teste;
+package br.com.alura.Handlers;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,17 +10,17 @@ import org.xml.sax.helpers.DefaultHandler;
 import br.com.alura.Model.Produto;
 
 
-public class LeitorXml extends DefaultHandler {
+public class ProdutosHandler extends DefaultHandler {
 		
 
-    List<Produto> produtos = new ArrayList<Produto>();
-    private Produto produto;
+    private List<Produto> produtos = new ArrayList<Produto>();
+	private Produto produto;
     private StringBuilder conteudo = new StringBuilder();
 
     @Override
     public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
     	
-    	System.out.println("abriu a tag:"+ qName);
+    	// System.out.println("abriu a tag:"+ qName);
         if(qName.equals("produto")) {
             produto = new Produto();
         }
@@ -46,5 +46,8 @@ public class LeitorXml extends DefaultHandler {
         }
 
     }
+    public List<Produto> getProdutos() {
+		return produtos;
+	}
 
 }
