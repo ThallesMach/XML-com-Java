@@ -19,14 +19,14 @@ public class Sistema {
 		Element venda = document.getDocumentElement();
 		String moeda = venda.getAttribute("moeda");
 		System.out.println(moeda);
-		NodeList produtos = document.getElementsByTagName("produto");
+		NodeList produtos = document.getElementsByTagName("produto"); // Não é produtos
 		
 		for (int i = 0; i < produtos.getLength(); i++){
 			
 			Element produto = (Element) produtos.item(1);
 		
 			String nome = produto.getElementsByTagName("nome").item(0).getTextContent();
-			double preco = Double.parseDouble(produto.getElementsByTagName("produto").item(0).getTextContent() );
+			double preco = Double.parseDouble(produto.getElementsByTagName("preco").item(0).getTextContent() );
 			Produto prod = new Produto(nome, preco);
 			
 			System.out.println(prod);
