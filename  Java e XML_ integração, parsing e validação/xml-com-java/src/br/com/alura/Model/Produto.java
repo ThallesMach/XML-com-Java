@@ -10,6 +10,18 @@ public class Produto {
 		this.preco = preco;
 	}
 
+	public Produto() {
+		
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public void setPreco(double preco) {
+		this.preco = preco;
+	}
+
 	public String getNome() {
 		return this.nome;
 	}
